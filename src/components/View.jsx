@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import {useState, useEffect} from 'react'
+import {getDoc, doc} from "firebase/firestore"
+import {db} from '../firebase'
 
 const View = ({newCardID}) => {
 
@@ -8,13 +10,21 @@ const View = ({newCardID}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    if (error) {
+        return (
+          <div>
+            <p>Error: {error}</p>
+          </div>
+        ) 
+    }
+
     return <div>
         <div id="card-front">
             <p>Business</p>
             <img></img>
         </div>
         <div id="card-back">
-            <p>Name</p>
+            <p>name</p>
             <p>Job</p>
             <p>Phone</p>
             <p>Email</p>
