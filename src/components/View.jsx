@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 const View = ({newCardID}) => {
 
     const navigate = useNavigate();
+    const [cardDetails, setCardDetails] = useState()
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     return <div>
         <div id="card-front">
