@@ -6,12 +6,14 @@ const Form = () => {
     const [name, setName] = useState("")
     const [job, setJob] = useState("")
     const [business, setBusiness] = useState("")
-
-    // console.log(name)
+    const [phone, setPhone] = useState("")
 
     const basicValidation = (str) => {
-        console.log(str.length)
         return (str.length > 0) ? "valid" : "invalid"
+    }
+
+    const phoneValidation = (str) => {
+        return (/^[0][7][^0|2]\d{2}(\s|-)?\d{3}(\s|-)?\d{3}$/.test(str) === true) ? "valid" : "invalid";
     }
 
     return <form>
@@ -25,7 +27,7 @@ const Form = () => {
         <input className={basicValidation(business)} type="text"  id="business-input" name="business-input" placeholder="Type your business name here" onChange={(e) => setBusiness(e.target.value)} ></input>
         
         <label htmlFor="phone-input">Phone number</label>
-        <input type="text"  id="phone-input" name="phone-input" placeholder="Type your phone number here" ></input>
+        <input className={phoneValidation(phone)} type="text"  id="phone-input" name="phone-input" placeholder="Type your phone number here" onChange={(e) => setPhone(e.target.value)} ></input>
         
         <label htmlFor="email-input">Email address</label>
         <input type="text"  id="email-input" name="email-input" placeholder="Type your email address here" ></input>
