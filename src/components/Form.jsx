@@ -10,6 +10,10 @@ const Form = () => {
     const [email, setEmail] = useState("")
     const [website, setWebsite] = useState("")
     const [logo, setLogo] = useState("")
+    const [colourFrontBg, setColourFrontBg] = useState("")
+    const [colourFrontText, setColourFrontText] = useState("")
+    const [colourBackBg, setColourBackBg] = useState("")
+    const [colourBackText, setColourBackText] = useState("")
 
     const basicValidation = (str) => {
          // checks length of string to ensure input has been filled and return "valid" or "invalid" for the className
@@ -57,16 +61,16 @@ const Form = () => {
         <input className={basicValidation(logo)} type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
         
         <label htmlFor="color-input-front-bg">Front Background Colour</label>
-        <input type="color" id="color-input-front-bg" name="color-input-front-bg" />
+        <input className={basicValidation(colourFrontBg)} type="color" id="color-input-front-bg" name="color-input-front-bg" onChange={(e) => setColourFrontBg(e.target.value)} />
         
         <label htmlFor="color-input-front-text">Front Text Colour</label>
-        <input type="color" id="color-input-front-text" name="color-input-front-text" />
+        <input className={basicValidation(colourFrontText)} type="color" id="color-input-front-text" name="color-input-front-text" onChange={(e) => setColourFrontText(e.target.value)} />
         
         <label htmlFor="color-input-back-bg">Back Background Colour</label>
-        <input type="color" id="color-input-back-bg" name="color-input-back-bg" />
+        <input className={basicValidation(colourBackBg)} type="color" id="color-input-back-bg" name="color-input-back-bg" onChange={(e) => setColourBackBg(e.target.value)} />
         
         <label htmlFor="color-input-back-text">Back Text Colour</label>
-        <input type="color" id="color-input-back-text" name="color-input-back-text" />
+        <input className={basicValidation(colourBackText)} type="color" id="color-input-back-text" name="color-input-back-text" onChange={(e) => setColourBackText(e.target.value)} />
         
         <input type="submit" value="CREATE BUSINESS CARD" />       
     </form>
