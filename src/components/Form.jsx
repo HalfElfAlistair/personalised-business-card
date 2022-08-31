@@ -8,6 +8,7 @@ const Form = () => {
     const [business, setBusiness] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
+    const [website, setWebsite] = useState("")
 
     const basicValidation = (str) => {
          // checks length of string to ensure input has been filled and return "valid" or "invalid" for the className
@@ -15,13 +16,18 @@ const Form = () => {
     }
 
     const phoneValidation = (str) => {
-        // perform regex check for valid uk mobile phone string and return "valid" or "invalid" for the className
+        // perform regex check for valid uk mobile phone string and return "valid" or "invalid" for the className.
         return (/^[0][7][^0|2]\d{2}(\s|-)?\d{3}(\s|-)?\d{3}$/.test(str) === true) ? "valid" : "invalid";
     }
 
     const emailValidation = (str) => {
         // perform regex check for valid email string and return "valid" or "invalid" for the className
         return (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(str) === true) ? "valid" : "invalid";
+    }
+
+    const websiteValidation = (str) => {
+        // perform regex check for valid website url string and return "valid" or "invalid" for the className
+        return (/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(str) === true) ? "valid" : "invalid";
     }
 
     
@@ -44,7 +50,7 @@ const Form = () => {
         <input className={emailValidation(email)} type="text"  id="email-input" name="email-input" placeholder="Type your email address here" onChange={(e) => setEmail(e.target.value)} ></input>
         
         <label htmlFor="website-input">Your website</label>
-        <input type="text"  id="website-input" name="website-input" placeholder="Type your website address here" ></input>
+        <input className={websiteValidation(website)} type="text"  id="website-input" name="website-input" placeholder="Type your website address here" onChange={(e) => setWebsite(e.target.value)} ></input>
         
         <label htmlFor="logo-input">Business Logo</label>
         <input type="file" id="logo-input" name="logo-input" />
