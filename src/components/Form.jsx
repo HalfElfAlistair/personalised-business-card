@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import '../index.css'
 import {db} from '../firebase'
 import {collection, addDoc, Timestamp} from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom';
 
 const Form = ({setNewCardID}) => {
 
@@ -17,6 +18,8 @@ const Form = ({setNewCardID}) => {
     const [colourBackBg, setColourBackBg] = useState("")
     const [colourBackText, setColourBackText] = useState("")
     const [validated, setValidated] = useState("")
+
+    const navigate = useNavigate();
 
     const basicValidation = (str) => {
          // checks length of string to ensure input has been filled and return "valid" or "invalid" for the className
@@ -69,6 +72,7 @@ const Form = ({setNewCardID}) => {
             setNewCardID(() => {
                 return docRef.id
             })
+            navigate('/view');
     }
 
     
