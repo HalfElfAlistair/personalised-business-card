@@ -1,4 +1,6 @@
-const View = () => {
+const View = ({newCardID}) => {
+
+    console.log("newCardID===>", newCardID)
 
     return <div>
         <div id="card-front">
