@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 const View = ({newCardID}) => {
 
-    console.log("newCardID===>", newCardID)
+    const navigate = useNavigate();
 
     return <div>
         <div id="card-front">
@@ -14,7 +16,7 @@ const View = ({newCardID}) => {
             <p>Email</p>
             <p>Website</p>
         </div>
-        <button>START AGAIN</button>
+        <button onClick={(e) => navigate('/')}>START AGAIN</button>
     </div>
 
 }
