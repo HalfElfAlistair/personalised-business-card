@@ -1,10 +1,10 @@
 import Form from '../components/Form'
 
-const Create = () => {
+const Create = ({setNewCardID}) => {
 
     return <div>
             <h1>Create your business card</h1>
-            <Form />
+            <Form setNewCardID={setNewCardID} />
     </div>
 
 }
