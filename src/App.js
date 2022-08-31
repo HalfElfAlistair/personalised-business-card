@@ -5,10 +5,12 @@ import View from './components/View'
 
 function App() {
 
+  const [newCardID, setNewCardID] = useState("")
+
   return (
     <Routes>
-      <Route path={"/"} element={<Create />} />
-      <Route path={"/view"} element={<View />} />
+      <Route path={"/"} element={<Create setNewCardID={setNewCardID} />} />
+      <Route path={"/view"} element={<View newCardID={newCardID} />} />
     </Routes>
   );
 }
