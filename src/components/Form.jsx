@@ -7,14 +7,25 @@ const Form = () => {
     const [job, setJob] = useState("")
     const [business, setBusiness] = useState("")
     const [phone, setPhone] = useState("")
+    const [email, setEmail] = useState("")
 
     const basicValidation = (str) => {
+         // checks length of string to ensure input has been filled and return "valid" or "invalid" for the className
         return (str.length > 0) ? "valid" : "invalid"
     }
 
     const phoneValidation = (str) => {
+        // perform regex check for valid uk mobile phone string and return "valid" or "invalid" for the className
         return (/^[0][7][^0|2]\d{2}(\s|-)?\d{3}(\s|-)?\d{3}$/.test(str) === true) ? "valid" : "invalid";
     }
+
+    const emailValidation = (str) => {
+        // perform regex check for valid email string and return "valid" or "invalid" for the className
+        return (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(str) === true) ? "valid" : "invalid";
+    }
+
+    
+    // each form input will update their respecive state values with onChange, and some will perform validation checks
 
     return <form>
         <label htmlFor="name-input">Name</label>
@@ -26,11 +37,11 @@ const Form = () => {
         <label htmlFor="business-input">Business name</label>
         <input className={basicValidation(business)} type="text"  id="business-input" name="business-input" placeholder="Type your business name here" onChange={(e) => setBusiness(e.target.value)} ></input>
         
-        <label htmlFor="phone-input">Phone number</label>
-        <input className={phoneValidation(phone)} type="text"  id="phone-input" name="phone-input" placeholder="Type your phone number here" onChange={(e) => setPhone(e.target.value)} ></input>
+        <label htmlFor="phone-input">Mobile Phone number</label>
+        <input className={phoneValidation(phone)} type="text"  id="phone-input" name="phone-input" placeholder="Type your mobile phone number here" onChange={(e) => setPhone(e.target.value)} ></input>
         
         <label htmlFor="email-input">Email address</label>
-        <input type="text"  id="email-input" name="email-input" placeholder="Type your email address here" ></input>
+        <input className={emailValidation(email)} type="text"  id="email-input" name="email-input" placeholder="Type your email address here" onChange={(e) => setEmail(e.target.value)} ></input>
         
         <label htmlFor="website-input">Your website</label>
         <input type="text"  id="website-input" name="website-input" placeholder="Type your website address here" ></input>
