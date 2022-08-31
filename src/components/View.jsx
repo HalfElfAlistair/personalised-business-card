@@ -38,15 +38,15 @@ const View = ({newCardID}) => {
 
     return <div>
         <div id="card-front">
-            <p>Business</p>
+            <p>{cardDetails.business}</p>
             <img></img>
         </div>
         <div id="card-back">
-            <p>name</p>
-            <p>Job</p>
-            <p>Phone</p>
-            <p>Email</p>
-            <p>Website</p>
+            <p>{cardDetails.name}</p>
+            <p>{cardDetails.job}</p>
+            <p>{cardDetails.phone}</p>
+            <p>{cardDetails.email}</p>
+            <p>{cardDetails.website}</p>
         </div>
         <button onClick={(e) => navigate('/')}>START AGAIN</button>
     </div>
