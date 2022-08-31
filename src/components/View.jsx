@@ -18,6 +18,12 @@ const View = ({newCardID}) => {
         ) 
     }
 
+    if (isLoading) {
+        return <div className="loading">
+                <p>Creating your business card...</p>
+            </div>
+    }    
+
     return <div>
         <div id="card-front">
             <p>Business</p>
