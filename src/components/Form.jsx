@@ -9,6 +9,7 @@ const Form = () => {
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
     const [website, setWebsite] = useState("")
+    const [logo, setLogo] = useState("")
 
     const basicValidation = (str) => {
          // checks length of string to ensure input has been filled and return "valid" or "invalid" for the className
@@ -53,7 +54,7 @@ const Form = () => {
         <input className={websiteValidation(website)} type="text"  id="website-input" name="website-input" placeholder="Type your website address here" onChange={(e) => setWebsite(e.target.value)} ></input>
         
         <label htmlFor="logo-input">Business Logo</label>
-        <input type="file" id="logo-input" name="logo-input" />
+        <input type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
         
         <label htmlFor="color-input-front-bg">Front Background Colour</label>
         <input type="color" id="color-input-front-bg" name="color-input-front-bg" />
