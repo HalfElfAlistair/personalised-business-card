@@ -10,6 +10,18 @@ const View = ({newCardID}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    useEffect(() => {
+        const docRef = doc(db, "cards", newCardID);
+        getDoc(docRef)
+            .then((data) => {
+                setCardDetails(data.data())
+                setIsLoading(false)
+            })
+            .catch((err) => {
+                setError({ err });
+            });
+    }, [newCardID])
+
     if (error) {
         return (
           <div>
