@@ -3,7 +3,7 @@ import '../index.css'
 import {db} from '../firebase'
 import {collection, addDoc, Timestamp} from 'firebase/firestore'
 
-const Form = () => {
+const Form = ({setNewCardID}) => {
 
     const [name, setName] = useState("")
     const [job, setJob] = useState("")
@@ -65,6 +65,9 @@ const Form = () => {
             colourBackBg: colourBackBg,
             colourBackText: colourBackText,
             created: Timestamp.now()
+            })
+            setNewCardID(() => {
+                return docRef.id
             })
     }
 
