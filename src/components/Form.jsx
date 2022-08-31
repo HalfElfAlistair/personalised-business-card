@@ -54,7 +54,7 @@ const Form = () => {
         <input className={websiteValidation(website)} type="text"  id="website-input" name="website-input" placeholder="Type your website address here" onChange={(e) => setWebsite(e.target.value)} ></input>
         
         <label htmlFor="logo-input">Business Logo</label>
-        <input type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
+        <input className={basicValidation(logo)} type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
         
         <label htmlFor="color-input-front-bg">Front Background Colour</label>
         <input type="color" id="color-input-front-bg" name="color-input-front-bg" />
