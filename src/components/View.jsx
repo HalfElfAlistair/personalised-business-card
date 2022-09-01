@@ -36,19 +36,29 @@ const View = ({newCardID}) => {
             </div>
     }    
 
-    return <div>
-        <div id="card-front">
-            <p>{cardDetails.business}</p>
-            <img></img>
+    return <div className="mx-auto w-10/12 my-60 h-3/6 flex flex-row flex-wrap justify-between p-5 gap-10 my-2">
+        <div className="w-full flex flex-row justify-between p-5 gap-10 my-2">
+            <div className="justify-self-start w-6/12 h-80" id="card-front" style={{"background-color": `${cardDetails.colourFrontBg}`, color: `${cardDetails.colourFrontText}`}}>
+                <div className="m-10">
+                    <img></img>
+                    <p className="inline text-3xl font-bold">{cardDetails.business}</p>
+                </div>
+            </div>
+            <div className="justify-self-end w-6/12 h-80" id="card-back" style={{"background-color": `${cardDetails.colourBackBg}`, color: `${cardDetails.colourBackText}`}}>
+                <div className="m-10">
+                    <p className="text-3xl font-semibold">{cardDetails.name}</p>
+                    <p className="text-2xl font-bold">{cardDetails.job}</p>
+                </div>
+                <div className="m-10">
+                    <p className="text-2xl">{cardDetails.phone}</p>
+                    <p className="text-2xl">{cardDetails.email}</p>
+                </div>
+                <div className="m-10">
+                    <p className="text-1xl font-bold">{cardDetails.website}</p>
+                </div>
+            </div>
         </div>
-        <div id="card-back">
-            <p>{cardDetails.name}</p>
-            <p>{cardDetails.job}</p>
-            <p>{cardDetails.phone}</p>
-            <p>{cardDetails.email}</p>
-            <p>{cardDetails.website}</p>
-        </div>
-        <button onClick={(e) => navigate('/')}>START AGAIN</button>
+        <button className="bg-indigo-600 rounded-3xl text-sm text-slate-50 px-16 py-4 font-semibold mx-auto mt-10 hover:underline hover:opacity-90" onClick={(e) => navigate('/')}>START AGAIN</button>
     </div>
 
 }
