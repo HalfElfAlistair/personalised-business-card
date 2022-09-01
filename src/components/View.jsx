@@ -40,20 +40,20 @@ const View = ({newCardID}) => {
         <div className="justify-self-start w-6/12 h-80" id="card-front">
             <div className="m-10">
                 <img></img>
-                <p>{cardDetails.business}</p>
+                <p className="inline text-3xl font-bold">{cardDetails.business}</p>
             </div>
         </div>
         <div className="justify-self-end w-6/12 h-80" id="card-back">
             <div className="m-10">
-                <p>{cardDetails.name}</p>
-                <p>{cardDetails.job}</p>
+                <p className="text-3xl font-semibold">{cardDetails.name}</p>
+                <p className="text-2xl font-bold">{cardDetails.job}</p>
             </div>
             <div className="m-10">
-                <p>{cardDetails.phone}</p>
-                <p>{cardDetails.email}</p>
+                <p className="text-2xl">{cardDetails.phone}</p>
+                <p className="text-2xl">{cardDetails.email}</p>
             </div>
             <div className="m-10">
-                <p>{cardDetails.website}</p>
+                <p className="text-1xl font-bold">{cardDetails.website}</p>
             </div>
         </div>
         <button onClick={(e) => navigate('/')}>START AGAIN</button>
