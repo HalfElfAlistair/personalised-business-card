@@ -49,9 +49,10 @@ const Form = ({setNewCardID}) => {
         </svg>
     }
 
-    const submitFunc = () => {
+    const submitFunc = (e) => {
+        e.preventDefault()
         if (validated.length === 11) {
-            return submitCard
+            return submitCard(e)
         }
     }
 
@@ -86,7 +87,7 @@ const Form = ({setNewCardID}) => {
     
     // each form input will update their respecive state values with onChange, and some will perform validation checks
 
-    return <form onSubmit={submitFunc()}>
+    return <form onSubmit={(e) => submitFunc(e)}>
         <label htmlFor="name-input">Name</label>
         <input className={basicValidation(name)} value={name} type="text" id="name-input" name="name-input" placeholder="Type your name here" onChange={(e) => setName(e.target.value)} ></input>
         {checkIcon(name)}
@@ -130,7 +131,7 @@ const Form = ({setNewCardID}) => {
         <input className={basicValidation(colourBackText)} type="color" id="color-input-back-text" name="color-input-back-text" onChange={(e) => setColourBackText(e.target.value)} />
         {checkIcon(colourBackText)}
         
-        <input type="submit" value="CREATE BUSINESS CARD" />       
+        <input type="submit" value="CREATE BUSINESS CARD" />    
     </form>
 
 }
