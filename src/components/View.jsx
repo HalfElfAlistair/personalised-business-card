@@ -38,15 +38,23 @@ const View = ({newCardID}) => {
 
     return <div className="mx-auto w-10/12 my-60 h-3/6 flex flex-row flex-wrap justify-between p-5 gap-10 my-2">
         <div id="card-front">
-            <p>{cardDetails.business}</p>
-            <img></img>
+            <div>
+                <img></img>
+                <p>{cardDetails.business}</p>
+            </div>
         </div>
         <div id="card-back">
-            <p>{cardDetails.name}</p>
-            <p>{cardDetails.job}</p>
-            <p>{cardDetails.phone}</p>
-            <p>{cardDetails.email}</p>
-            <p>{cardDetails.website}</p>
+            <div>
+                <p>{cardDetails.name}</p>
+                <p>{cardDetails.job}</p>
+            </div>
+            <div>
+                <p>{cardDetails.phone}</p>
+                <p>{cardDetails.email}</p>
+            </div>
+            <div>
+                <p>{cardDetails.website}</p>
+            </div>
         </div>
         <button onClick={(e) => navigate('/')}>START AGAIN</button>
     </div>
