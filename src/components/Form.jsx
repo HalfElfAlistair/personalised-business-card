@@ -162,7 +162,7 @@ const Form = ({setNewCardID}) => {
                 </div>
             </div>
         </div>
-        <input type="submit" value="CREATE BUSINESS CARD" />    
+        <input className="bg-indigo-600 rounded-3xl text-sm text-slate-50 px-16 py-4 font-semibold mx-auto mt-10" type="submit" value="CREATE BUSINESS CARD" />    
     </form>
 
 }
