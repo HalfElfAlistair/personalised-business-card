@@ -58,7 +58,7 @@ const View = ({newCardID}) => {
                 </div>
             </div>
         </div>
-        <button onClick={(e) => navigate('/')}>START AGAIN</button>
+        <button className="bg-indigo-600 rounded-3xl text-sm text-slate-50 px-16 py-4 font-semibold mx-auto mt-10 hover:underline hover:opacity-90" onClick={(e) => navigate('/')}>START AGAIN</button>
     </div>
 
 }
