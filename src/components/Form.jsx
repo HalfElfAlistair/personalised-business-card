@@ -4,7 +4,7 @@ import {db} from '../firebase'
 import {collection, addDoc, Timestamp} from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom';
 
-const Form = ({setNewCardID}) => {
+const Form = ({setNewCardID, newCardID}) => {
 
     const [name, setName] = useState("")
     const [job, setJob] = useState("")
@@ -81,9 +81,8 @@ const Form = ({setNewCardID}) => {
             setNewCardID(() => {
                 return docRef.id
             })
-            navigate('/view');
+            navigate(`/view/${docRef.id}`);
     }
-
     
     // Each form input will update their respecive state values with onChange, and some will perform validation checks
     // Form is split into nested divs to make layout easier
