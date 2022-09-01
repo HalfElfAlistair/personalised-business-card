@@ -85,52 +85,81 @@ const Form = ({setNewCardID}) => {
     }
 
     
-    // each form input will update their respecive state values with onChange, and some will perform validation checks
+    // Each form input will update their respecive state values with onChange, and some will perform validation checks
+    // Form is split into nested divs to make layout easier
 
     return <form onSubmit={(e) => submitFunc(e)}>
-        <label htmlFor="name-input">Name</label>
-        <input className={basicValidation(name)} value={name} type="text" id="name-input" name="name-input" placeholder="Type your name here" onChange={(e) => setName(e.target.value)} ></input>
-        {checkIcon(name)}
-        <label htmlFor="job-input">Job Title</label>
-        <input className={basicValidation(job)} type="text"  id="job-input" name="job-input" placeholder="Type your job title here" onChange={(e) => setJob(e.target.value)} ></input>
-        {checkIcon(job)}
-        
-        <label htmlFor="business-input">Business name</label>
-        <input className={basicValidation(business)} type="text"  id="business-input" name="business-input" placeholder="Type your business name here" onChange={(e) => setBusiness(e.target.value)} ></input>
-        {checkIcon(business)}
-
-        <label htmlFor="phone-input">Mobile Phone number</label>
-        <input className={basicValidation(phone)} type="text"  id="phone-input" name="phone-input" placeholder="Type your mobile phone number here" onChange={(e) => setPhone(phoneValidation(e.target.value))} ></input>
-        {checkIcon(phone)}
-        
-        <label htmlFor="email-input">Email address</label>
-        <input className={basicValidation(email)} type="text"  id="email-input" name="email-input" placeholder="Type your email address here" onChange={(e) => setEmail(emailValidation(e.target.value))} ></input>
-        {checkIcon(email)}
-        
-        <label htmlFor="website-input">Your website</label>
-        <input className={basicValidation(website)} type="text"  id="website-input" name="website-input" placeholder="Type your website address here" onChange={(e) => setWebsite(websiteValidation(e.target.value))} ></input>
-        {checkIcon(website)}
-        
-        <label htmlFor="logo-input">Business Logo</label>
-        <input className={basicValidation(logo)} type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
-        {checkIcon(logo)}
-        
-        <label htmlFor="color-input-front-bg">Front Background Colour</label>
-        <input className={basicValidation(colourFrontBg)} type="color" id="color-input-front-bg" name="color-input-front-bg" onChange={(e) => setColourFrontBg(e.target.value)} />
-        {checkIcon(colourFrontBg)}
-        
-        <label htmlFor="color-input-front-text">Front Text Colour</label>
-        <input className={basicValidation(colourFrontText)} type="color" id="color-input-front-text" name="color-input-front-text" onChange={(e) => setColourFrontText(e.target.value)} />
-        {checkIcon(colourFrontText)}
-        
-        <label htmlFor="color-input-back-bg">Back Background Colour</label>
-        <input className={basicValidation(colourBackBg)} type="color" id="color-input-back-bg" name="color-input-back-bg" onChange={(e) => setColourBackBg(e.target.value)} />
-        {checkIcon(colourBackBg)}
-        
-        <label htmlFor="color-input-back-text">Back Text Colour</label>
-        <input className={basicValidation(colourBackText)} type="color" id="color-input-back-text" name="color-input-back-text" onChange={(e) => setColourBackText(e.target.value)} />
-        {checkIcon(colourBackText)}
-        
+        <div>
+            <div>
+                <label htmlFor="name-input">Name</label>
+                <input className={basicValidation(name)} value={name} type="text" id="name-input" name="name-input" placeholder="Type your name here" onChange={(e) => setName(e.target.value)} ></input>
+                {checkIcon(name)}
+            </div>
+            <div>
+                <label htmlFor="job-input">Job Title</label>
+                <input className={basicValidation(job)} type="text"  id="job-input" name="job-input" placeholder="Type your job title here" onChange={(e) => setJob(e.target.value)} ></input>
+                {checkIcon(job)} 
+            </div>
+        </div>
+        <div>
+            <label htmlFor="business-input">Business name</label>
+            <input className={basicValidation(business)} type="text"  id="business-input" name="business-input" placeholder="Type your business name here" onChange={(e) => setBusiness(e.target.value)} ></input>
+            {checkIcon(business)}
+        </div>
+        <div>
+            <div>
+                <label htmlFor="phone-input">Mobile Phone number</label>
+                <input className={basicValidation(phone)} type="text"  id="phone-input" name="phone-input" placeholder="Type your mobile phone number here" onChange={(e) => setPhone(phoneValidation(e.target.value))} ></input>
+                {checkIcon(phone)}
+            </div>
+            <div>
+                <label htmlFor="email-input">Email address</label>
+                <input className={basicValidation(email)} type="text"  id="email-input" name="email-input" placeholder="Type your email address here" onChange={(e) => setEmail(emailValidation(e.target.value))} ></input>
+                {checkIcon(email)}
+            </div>
+        </div>
+        <div>
+            <label htmlFor="website-input">Your website</label>
+            <input className={basicValidation(website)} type="text"  id="website-input" name="website-input" placeholder="Type your website address here" onChange={(e) => setWebsite(websiteValidation(e.target.value))} ></input>
+            {checkIcon(website)}
+        </div>
+        <div>
+            <label htmlFor="logo-input">Business Logo</label>
+            <input className={basicValidation(logo)} type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
+            {checkIcon(logo)}
+        </div>
+        <div>
+            <div>
+                <label htmlFor="color-input-front-bg">Front Background Colour</label>
+                <div>
+                    <input className={basicValidation(colourFrontBg)} type="color" id="color-input-front-bg" name="color-input-front-bg" onChange={(e) => setColourFrontBg(e.target.value)} />
+                    {checkIcon(colourFrontBg)}
+                </div>
+            </div>
+            <div>
+                <label htmlFor="color-input-front-text">Front Text Colour</label>
+                <div>
+                    <input className={basicValidation(colourFrontText)} type="color" id="color-input-front-text" name="color-input-front-text" onChange={(e) => setColourFrontText(e.target.value)} />
+                    {checkIcon(colourFrontText)}
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label htmlFor="color-input-back-bg">Back Background Colour</label>
+                <div>
+                    <input className={basicValidation(colourBackBg)} type="color" id="color-input-back-bg" name="color-input-back-bg" onChange={(e) => setColourBackBg(e.target.value)} />
+                    {checkIcon(colourBackBg)}
+                </div>
+            </div>
+            <div>
+                <label htmlFor="color-input-back-text">Back Text Colour</label>
+                <div>
+                    <input className={basicValidation(colourBackText)} type="color" id="color-input-back-text" name="color-input-back-text" onChange={(e) => setColourBackText(e.target.value)} />
+                    {checkIcon(colourBackText)}
+                </div>
+            </div>
+        </div>
         <input type="submit" value="CREATE BUSINESS CARD" />    
     </form>
 
