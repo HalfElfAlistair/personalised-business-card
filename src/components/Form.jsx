@@ -21,9 +21,9 @@ const Form = ({setNewCardID}) => {
 
     const navigate = useNavigate();
 
-    const basicValidation = (str) => {
-         // checks length of string to ensure input has been filled and return "valid" or "invalid" for the className
-        return (str.length > 0) ? "valid" : "invalid"
+    const basicValidation = (str, tailwindClasses) => {
+         // checks length of string to ensure input has been filled and return "valid" or "invalid", along with the tailwind classes, for the className
+        return (str.length > 0) ? `valid ${tailwindClasses}` : `invalid ${tailwindClasses}`
     }
 
     const phoneValidation = (str) => {
@@ -78,7 +78,6 @@ const Form = ({setNewCardID}) => {
     
     // each form input will update their respecive state values with onChange, and some will perform validation checks
 
-    // return <form onSubmit={submitCard}>
     return <form onSubmit={submitFunc()}>
         <label htmlFor="name-input">Name</label>
         <input className={basicValidation(name)} value={name} type="text" id="name-input" name="name-input" placeholder="Type your name here" onChange={(e) => setName(e.target.value)} ></input>
