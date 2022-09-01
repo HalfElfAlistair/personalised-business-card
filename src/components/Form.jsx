@@ -133,14 +133,14 @@ const Form = ({setNewCardID}) => {
         <div className="w-full flex flex-row justify-between gap-10 my-2">
             <div className="w-full">
                 <label className="block text-sm leading-8" htmlFor="color-input-front-bg">Front Background Colour</label>
-                <div>
+                <div className="block bg-stone-100 rounded-3xl w-full h-10">
                     <input className={basicValidation(colourFrontBg, "w-3/12 h-10")} type="color" id="color-input-front-bg" name="color-input-front-bg" onChange={(e) => setColourFrontBg(e.target.value)} />
                     {checkIcon(colourFrontBg)}
                 </div>
             </div>
             <div className="w-full">
                 <label className="block text-sm leading-8" htmlFor="color-input-front-text">Front Text Colour</label>
-                <div>
+                <div className="block bg-stone-100 rounded-3xl w-full h-10">
                     <input className={basicValidation(colourFrontText, "w-3/12 h-10")} type="color" id="color-input-front-text" name="color-input-front-text" onChange={(e) => setColourFrontText(e.target.value)} />
                     {checkIcon(colourFrontText)}
                 </div>
@@ -149,14 +149,14 @@ const Form = ({setNewCardID}) => {
         <div className="w-full flex flex-row justify-between gap-10 my-2">
             <div className="w-full">
                 <label className="block text-sm leading-8" htmlFor="color-input-back-bg">Back Background Colour</label>
-                <div>
+                <div className="block bg-stone-100 rounded-3xl w-full h-10">
                     <input className={basicValidation(colourBackBg, "w-3/12 h-10")} type="color" id="color-input-back-bg" name="color-input-back-bg" onChange={(e) => setColourBackBg(e.target.value)} />
                     {checkIcon(colourBackBg)}
                 </div>
             </div>
             <div className="w-full">
                 <label className="block text-sm leading-8" htmlFor="color-input-back-text">Back Text Colour</label>
-                <div>
+                <div className="block bg-stone-100 rounded-3xl w-full h-10">
                     <input className={basicValidation(colourBackText, "w-3/12 h-10")} type="color" id="color-input-back-text" name="color-input-back-text" onChange={(e) => setColourBackText(e.target.value)} />
                     {checkIcon(colourBackText)}
                 </div>
