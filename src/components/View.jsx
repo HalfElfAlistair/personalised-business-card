@@ -37,13 +37,13 @@ const View = ({newCardID}) => {
     }    
 
     return <div className="mx-auto w-10/12 my-60 h-3/6 flex flex-row flex-wrap justify-between p-5 gap-10 my-2">
-        <div id="card-front">
+        <div className="justify-self-start w-6/12 h-80" id="card-front">
             <div>
                 <img></img>
                 <p>{cardDetails.business}</p>
             </div>
         </div>
-        <div id="card-back">
+        <div className="justify-self-end w-6/12 h-80" id="card-back">
             <div>
                 <p>{cardDetails.name}</p>
                 <p>{cardDetails.job}</p>
