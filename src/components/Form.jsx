@@ -125,8 +125,10 @@ const Form = ({setNewCardID}) => {
         </div>
         <div className="w-full my-2">
             <label className="block text-sm leading-8" htmlFor="logo-input">Business Logo</label>
-            <input className={basicValidation(logo)} type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
-            {checkIcon(logo)}
+            <div className="block text-sm leading-8 bg-stone-100 rounded-3xl w-full h-10">
+                <input className={basicValidation(logo)} type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
+                {checkIcon(logo)}
+            </div>
         </div>
         <div className="w-full flex flex-row justify-between gap-10 my-2">
             <div className="w-full">
