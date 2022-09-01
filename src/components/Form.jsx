@@ -88,7 +88,7 @@ const Form = ({setNewCardID}) => {
     // Each form input will update their respecive state values with onChange, and some will perform validation checks
     // Form is split into nested divs to make layout easier
 
-    return <form onSubmit={(e) => submitFunc(e)}>
+    return <form className="flex flex-row flex-wrap justify-between p-5" onSubmit={(e) => submitFunc(e)}>
         <div>
             <div>
                 <label htmlFor="name-input">Name</label>
