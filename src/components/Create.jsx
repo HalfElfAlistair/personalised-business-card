@@ -2,8 +2,8 @@ import Form from '../components/Form'
 
 const Create = ({setNewCardID}) => {
 
-    return <div className="mx-auto w-5/12 my-60 h-3/6">
-            <h1 className="mx-auto w-full mb-0 p-5 text-center text-3xl">Create your business card</h1>
+    return <div className="w-full m-2 lg:w-5/12 lg:my-60 lg:h-3/6 m-auto">
+            <h1 className="text-center text-2xl sm:text-3xl lg:mb-0 lg:p-5 lg:">Create your <b>business card</b></h1>
             <Form setNewCardID={setNewCardID} />
     </div>
 
