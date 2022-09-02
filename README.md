@@ -53,15 +53,17 @@ Open your terminal, navigate to the directory you want the repo to be in ('cd <c
 
 Once in your cloned repository, enter 'npm start' to run the project in the development mode
 
+You'll need to setup Firebase as well. For assistance with this, please view the [Firebase Docs](https://firebase.google.com/docs). There's also a handy guide explaining how to [Build a CRUD application in React with Firebase Web SDK v9](https://blog.logrocket.com/build-crud-application-react-firebase-web-sdk-v9/) which will cover it too.
+
 You'll also need to make sure the following dependencies are installed:
 
-- React v-18.2.0
-- Firebase v-9.9.3
+- [React](https://reactjs.org/) v-18.2.0
+- [Firebase](https://firebase.google.com/) v-9.9.3
+- [Tailwind](https://tailwindcss.com/) v-3.1.8
 - React-dom v-18.2.0
-- React-router-dom v-6.3.0
+- [React-router-dom](https://reactrouter.com/en/main) v-6.3.0
 - React-scripts v-5.0.1
 - Web-vitals v-2.1.4
-- Tailwind v-3.1.8
 
 ## Author
 
