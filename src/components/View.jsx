@@ -43,29 +43,32 @@ const View = ({newCardID}) => {
             </div>
     }    
 
-    return <div className="mx-auto w-10/12 my-60 h-3/6 flex flex-row flex-wrap justify-between p-5 gap-10 my-2">
-        <div className="w-full flex flex-row justify-between p-5 gap-10 my-2">
-            <div className="justify-self-start w-6/12 h-80 shadow-lg hover:border-solid hover:border-stone-300 hover:border-2" id="card-front" style={{backgroundColor: `${cardDetails.colourFrontBg}`, color: `${cardDetails.colourFrontText}`}}>
-                <div className="m-10">
-                    <img className="inline w-24 h-24" id="logo-image" alt={`The ${cardDetails.business} logo`} src={cardDetails.logo}></img>
+    return <div className="mx-auto my-2 lg:w-10/12 lg:my-60 lg:h-3/6 lg:flex lg:flex-row lg:flex-wrap lg:justify-between lg:p-5 lg:gap-10">
+        <div className="my-2 lg:w-full lg:flex lg:flex-row lg:justify-between lg:p-5 lg:gap-10">
+            <div className="m-2 p-2 h-72 shadow-lg sm:m-auto sm:mt-5 sm:justify-self-start sm:w-10/12 sm:h-80 md:w-8/12 lg:w-8/12 hover:border-solid hover:border-stone-300 hover:border-2" id="card-front" style={{backgroundColor: `${cardDetails.colourFrontBg}`, color: `${cardDetails.colourFrontText}`}}>
+                <div className="m-5">
+                    <img className="inline w-10 h-10 lg:w-24 lg:h-24" id="logo-image" alt={`The ${cardDetails.business} logo`} src={cardDetails.logo}></img>
                     <p className="inline text-3xl font-bold ml-5">{cardDetails.business}</p>
                 </div>
             </div>
-            <div className="justify-self-end w-6/12 h-80 shadow-lg hover:border-solid hover:border-stone-300 hover:border-2" id="card-back" style={{backgroundColor: `${cardDetails.colourBackBg}`, color: `${cardDetails.colourBackText}`}}>
-                <div className="m-10">
+            <div className="m-2 p-2 h-72 shadow-lg sm:m-auto sm:mt-5 sm:justify-self-start sm:w-10/12 sm:h-80 md:w-8/12 lg:w-8/12 hover:border-solid hover:border-stone-300 hover:border-2" id="card-back" style={{backgroundColor: `${cardDetails.colourBackBg}`, color: `${cardDetails.colourBackText}`}}>
+                <div className="m-5">
                     <p className="text-3xl font-semibold">{cardDetails.name}</p>
                     <p className="text-2xl font-bold">{cardDetails.job}</p>
                 </div>
-                <div className="m-10">
+                <div className="m-5">
                     <p className="text-2xl">{cardDetails.phone}</p>
                     <p className="text-2xl">{cardDetails.email}</p>
                 </div>
-                <div className="m-10">
+                <div className="m-5">
                     <p className="text-1xl font-bold">{cardDetails.website}</p>
                 </div>
             </div>
         </div>
-        <button className="bg-indigo-600 rounded-3xl text-sm text-slate-50 px-16 py-4 font-semibold mx-auto mt-10 hover:underline hover:opacity-90" onClick={(e) => navigate('/')}>START AGAIN</button>
+        <div className="m-auto flex sm:w-10/12 md:w-8/12 md:my-2 lg:w-full">
+            <button className="content-center m-auto bg-indigo-600 rounded-3xl text-sm text-slate-50 px-16 py-4 font-semibold mx-auto mt-10 hover:underline hover:opacity-90" onClick={(e) => navigate('/')}>START AGAIN</button>
+        </div>
+        
     </div>
 
 }
