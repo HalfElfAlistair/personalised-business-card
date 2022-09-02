@@ -23,7 +23,7 @@ const Form = ({setNewCardID, newCardID}) => {
 
     const basicValidation = (str, tailwindClasses) => {
          // checks length of string to ensure input has been filled and return "valid" or "invalid", along with the tailwind classes, for the className
-        return (str.length > 0) ? `valid ${tailwindClasses}` : `invalid ${tailwindClasses}`
+        return (str.length > 0) ? `${tailwindClasses} border-solid border-2 border-green-500` : `${tailwindClasses}`
     }
 
     const phoneValidation = (str) => {
