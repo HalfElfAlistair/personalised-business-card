@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Form = ({setNewCardID, newCardID}) => {
 
+    // input data states
     const [name, setName] = useState("")
     const [job, setJob] = useState("")
     const [business, setBusiness] = useState("")
@@ -17,6 +18,8 @@ const Form = ({setNewCardID, newCardID}) => {
     const [colourFrontText, setColourFrontText] = useState("")
     const [colourBackBg, setColourBackBg] = useState("")
     const [colourBackText, setColourBackText] = useState("")
+
+    // validation state
     const [validated, setValidated] = useState("")
 
     const navigate = useNavigate();
@@ -27,17 +30,17 @@ const Form = ({setNewCardID, newCardID}) => {
     }
 
     const phoneValidation = (str) => {
-        // perform regex check for valid uk mobile phone string and return str argument if true or "" if false.
+        // performs regex check for valid uk mobile phone string and return str argument if true or "" if false.
         return (/^[0][7][^0|2]\d{2}(\s|-)?\d{3}(\s|-)?\d{3}$/.test(str) === true) ? str : "";
     }
 
     const emailValidation = (str) => {
-        // perform regex check for valid email string and return str argument if true or "" if false.
+        // performs regex check for valid email string and return str argument if true or "" if false.
         return (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(str) === true) ? str : "";
     }
 
     const websiteValidation = (str) => {
-        // perform regex check for valid website url string and return str argument if true or "" if false.
+        // performs regex check for valid website url string and return str argument if true or "" if false.
         return (/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(str) === true) ? str : "";
     }
 
@@ -49,21 +52,24 @@ const Form = ({setNewCardID, newCardID}) => {
         </svg>
     }
 
+    useEffect(() => {
+        // assigns an array of all input data states, excluding logo then filters out any empty strings to assign new validityTest variable which is set to validated state
+        const stateArray = [name, job, business, phone, email, website, colourFrontBg, colourFrontText, colourBackBg, colourBackText]
+        const validityTest = stateArray.filter(value => value.length > 0)
+        setValidated(validityTest)
+    }, [name, job, business, phone, email, website, colourFrontBg, colourFrontText, colourBackBg, colourBackText])
+
     const submitFunc = (e) => {
+        // prevents page refresh if invalid submission. If valid returns submitCard function
         e.preventDefault()
         if (validated.length === 10) {
             return (submitCard(e))
         }
     }
 
-    useEffect(() => {
-        let stateArray = [name, job, business, phone, email, website, colourFrontBg, colourFrontText, colourBackBg, colourBackText]
-        const validityTest = stateArray.filter(value => value.length > 1)
-        setValidated(validityTest)
-    }, [name, job, business, phone, email, website, colourFrontBg, colourFrontText, colourBackBg, colourBackText])
-
     const submitCard = async (e) => {
         e.preventDefault()
+        // Accesses 'cards' collection from firebase and creates a new document object, with data from the input states as properties and a timestamp.
         const docRef = await addDoc(collection(db, 'cards'), {
             name: name,
             job: job,
@@ -78,9 +84,11 @@ const Form = ({setNewCardID, newCardID}) => {
             colourBackText: colourBackText,
             created: Timestamp.now()
             })
+            // takes the id from the new document reference and sets newCardID state with it
             setNewCardID(() => {
                 return docRef.id
             })
+            // takes the id from the new document and uses it in the URL path to view the card preview, which is navigated to
             navigate(`/view/${docRef.id}`);
     }
     
