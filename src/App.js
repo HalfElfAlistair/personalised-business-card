@@ -1,3 +1,4 @@
+import {db} from './firebase'
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Create from './components/Create'
 import View from './components/View'
