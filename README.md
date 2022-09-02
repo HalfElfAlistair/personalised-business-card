@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# personalised-business-card
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app to display a business card, at a unique URL, after filling in a short form.
 
-## Available Scripts
+## Contents
 
-In the project directory, you can run:
+- [Introduction](#Introduction)
 
-### `npm start`
+- [Technologies](#Technologies)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Launch](#Launch)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Author](#Author)
 
-### `npm test`
+- [Acknowledgments](#Acknowledgments)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Introduction
 
-### `npm run build`
+As part of a tech test, I was tasked with developing a simple react application to create a personalised business card.. This required a form to submit to Firebase for data handling. The following information was needed: Name, Job title, Business, Phone number, Email address, and Website. An optional logo was to be accounted for and the user should also be able to select the colour scheme for their card.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The data then needed to be retrieved and presented in a preview form, with a unique URL.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A basic design was provided by the organisation via adobe xd. The project required this to be followed for styling, using a css framework, I used Tailwind.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Aims
 
-### `npm run eject`
+The task should demonstrate the following technical core concepts:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Modern, functional React components and managing state using hooks
+- Database interaction
+- Form data handling and validation
+- Styling using CSS prototyping framework (eg: Tailwind)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- JavaScript
+- React
+- Node
+- Firebase
+- Tailwind
+- HTML
+- CSS
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Launch
 
-## Learn More
+To run this project locally, you'll need to do the following:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make sure you're using at least node version v14.18.1
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Use the 'code' button, on the repo page, to view the url and copy it
 
-### Code Splitting
+Open your terminal, navigate to the directory you want the repo to be in ('cd <chosen-directory>'), then enter: 'git clone <repo-url>'. For a more detailed set of instructions, please use this handy guide from the [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Once in your cloned repository, enter 'npm start' to run the project in the development mode
 
-### Analyzing the Bundle Size
+You'll also need to make sure the following dependencies are installed:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React v-18.2.0
+- Firebase v-9.9.3
+- React-dom v-18.2.0
+- React-router-dom v-6.3.0
+- React-scripts v-5.0.1
+- Web-vitals v-2.1.4
+- Tailwind v-3.1.8
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Alistair Sinclair-Smith
 
-### Advanced Configuration
+Email: [alistairjss90@gmail.com](alistairjss90@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+GitHub: [HalfElfAlistair](https://github.com/HalfElfAlistair)
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### [BoomerangHR](https://boomerang-hr.com/)
 
-### `npm run build` fails to minify
+Set me the task and provided designs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [Northcoders](https://northcoders.com/)
+
+The bootcamp taught me to understand React, along with lots more. It was through their jobs board that I was able to contact BoomerangHR too.
+
+### [Regexr](https://regexr.com/3e48o)
+
+The Rexep for my email address validation was acquired from here. Regexr is also my go to place for regexp queries and testing.
+
+### [Regextester](https://www.regextester.com/94502)
+
+The Rexep for my website url validation was acquired from here.
