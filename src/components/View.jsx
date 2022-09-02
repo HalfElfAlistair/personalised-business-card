@@ -6,18 +6,25 @@ import {db} from '../firebase'
 const View = ({newCardID}) => {
 
     const navigate = useNavigate();
+
+    // assigns state for retrieved data to be set as well as error and loading states
     const [cardDetails, setCardDetails] = useState()
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        // accesses cards collection and document id matching newCardID, assigns to document reference
         const docRef = doc(db, "cards", newCardID);
         getDoc(docRef)
             .then((data) => {
+                // uses data from document reference to set cardDetails state
                 setCardDetails(data.data())
+                // once data has been retrieved, isLoading state changes to false so that the data can be presented
                 setIsLoading(false)
             })
             .catch((err) => {
+                // sets error state with caught error, to enable displayed error message
+                console.log(err)
                 setError({ err });
             });
     }, [newCardID])
