@@ -51,16 +51,16 @@ const Form = ({setNewCardID, newCardID}) => {
 
     const submitFunc = (e) => {
         e.preventDefault()
-        if (validated.length === 11) {
-            return submitCard(e)
+        if (validated.length === 10) {
+            return (submitCard(e))
         }
     }
 
     useEffect(() => {
-        let stateArray = [name, job, business, phone, email, website, logo, colourFrontBg, colourFrontText, colourBackBg, colourBackText]
+        let stateArray = [name, job, business, phone, email, website, colourFrontBg, colourFrontText, colourBackBg, colourBackText]
         const validityTest = stateArray.filter(value => value.length > 1)
         setValidated(validityTest)
-    }, [name, job, business, phone, email, website, logo, colourFrontBg, colourFrontText, colourBackBg, colourBackText])
+    }, [name, job, business, phone, email, website, colourFrontBg, colourFrontText, colourBackBg, colourBackText])
 
     const submitCard = async (e) => {
         e.preventDefault()
@@ -125,7 +125,7 @@ const Form = ({setNewCardID, newCardID}) => {
         <div className="w-full my-2">
             <label className="block text-sm leading-8" htmlFor="logo-input">Business Logo</label>
             <div className="block text-sm leading-8 bg-stone-100 rounded-3xl w-full h-10">
-                <input className={basicValidation(logo)} type="file" id="logo-input" name="logo-input" onChange={(e) => setLogo(e.target.value)} />
+                <input className={basicValidation(logo, "block bg-stone-100 rounded-3xl text-sm text-left placeholder-stone-400 py-3 pl-4 w-full")} type="text"  id="logo-input" name="logo-input" placeholder="Paste your logo image URL here" onChange={(e) => setLogo(websiteValidation(e.target.value))} ></input>
                 {checkIcon(logo)}
             </div>
         </div>
